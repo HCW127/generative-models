@@ -1,0 +1,34 @@
+---
+name: chaewon
+surname: Ham
+position: "Student"
+address: "School of Internatinal studies, Hanyang University
+phone: 010-xxxx-xxxx
+email: "chaewon1610@naver.com"
+date: "`r format(Sys.time(), '%B %Y')`"
+output:
+  vitae::awesomecv:
+    page_total: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# Some stuff about me
+
+ * As an international student at Hanyang University, I have participated in a program where English ability is essential.
+ * I have a lot of mentoring experience for high school students.
+ * I work as an assistant at a Korean language academy.
+
+# Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "International studies", "2022~2025", "Hanyang University", "Korea",
+) %>%
+  detailed_entries(Degree, Year, Institution, Where)
+```
